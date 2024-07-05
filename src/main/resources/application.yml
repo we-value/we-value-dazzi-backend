@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: dazzi
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/dazzi
+    username: dazzi
+    password: #
+
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: create  # option type: create, create-drop, update, validate, none
+    properties:
+      hibernate:
+        show_sql: true  # sql ??? ?????.
+        format_sql: true  # sql query formatting
+        use_sql_comments: true  # sql ??? ????? ?????.
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: debug
