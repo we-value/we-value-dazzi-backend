@@ -15,4 +15,6 @@ public class Member extends BaseEntity {
     private SocialLoginType socialLoginType;
     private String socialLoginToken;
     private String deviceInfo;
+
+    private String nickName;
 }
