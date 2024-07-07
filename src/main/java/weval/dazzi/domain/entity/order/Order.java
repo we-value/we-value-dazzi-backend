@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import weval.dazzi.domain.BaseEntity;
 import weval.dazzi.domain.entity.member.Member;
+import weval.dazzi.domain.entity.payment.Payment;
 import weval.dazzi.domain.entity.product.Product;
 
 import static lombok.AccessLevel.PROTECTED;
@@ -31,6 +32,7 @@ public class Order extends BaseEntity {
     @JoinColumn(name = "product_id")
     private Product product;
 
-//    @OneToOne(mappedBy = "order")
-//    private Payment payment;
+    @OneToOne
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
 }

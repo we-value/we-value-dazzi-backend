@@ -22,7 +22,6 @@ public class Payment extends BaseEntity {
     private String amount;
     private String status;
 
-    @OneToOne
-    @JoinColumn(name = "order_id")
+    @OneToOne(mappedBy = "payment")
     private Order order;
 }

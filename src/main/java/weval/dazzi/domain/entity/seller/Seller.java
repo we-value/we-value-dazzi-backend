@@ -20,8 +20,7 @@ public class Seller extends BaseEntity {
 
     private String name;
 
-    @OneToOne
-    @JoinColumn(name = "member_id")
+    @OneToOne(mappedBy = "seller")
     private Member member;
 
 //    @OneToMany(mappedBy = "seller")
