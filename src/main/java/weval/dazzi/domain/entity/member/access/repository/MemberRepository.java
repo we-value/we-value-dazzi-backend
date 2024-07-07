@@ -1,13 +1,13 @@
-package weval.dazzi.domain.member.access.repository;
+package weval.dazzi.domain.entity.member.access.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import weval.dazzi.domain.member.Member;
+import weval.dazzi.domain.entity.member.Member;
 
 import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    Optional<Member> findAllById(Long id);
+    Optional<Member> findByMemberId(Long id);
 
     Optional<Member> findBySocialId(String socialId);
 }

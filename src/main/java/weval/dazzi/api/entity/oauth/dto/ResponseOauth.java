@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import weval.dazzi.domain.enums.SocialLoginType;
-import weval.dazzi.domain.member.Member;
+import weval.dazzi.domain.entity.member.Member;
 
 import java.util.LinkedHashMap;
 

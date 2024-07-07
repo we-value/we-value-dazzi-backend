@@ -3,7 +3,7 @@ package weval.dazzi.api.entity.member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import weval.dazzi.api.entity.member.dto.RequestMember;
-import weval.dazzi.domain.member.Member;
+import weval.dazzi.domain.entity.member.*;
 
 @RestController
 @RequestMapping("/member")

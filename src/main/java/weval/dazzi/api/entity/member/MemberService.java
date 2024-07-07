@@ -4,9 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import weval.dazzi.api.entity.oauth.dto.ResponseOauth;
-import weval.dazzi.domain.enums.SocialLoginType;
-import weval.dazzi.domain.member.Member;
-import weval.dazzi.domain.member.access.repository.MemberRepository;
+import weval.dazzi.domain.entity.member.Member;
+import weval.dazzi.domain.entity.member.access.repository.MemberRepository;
 
 import java.util.Optional;
 
@@ -29,7 +28,7 @@ public class MemberService {
     }
 
     public Member find(Long id) {
-        Optional<Member> member = memberRepository.findAllById(id);
+        Optional<Member> member = memberRepository.findByMemberId(id);
         if (member.isEmpty()) {
             throw new IllegalStateException("찾을 수 있는 멤버가 없습니다");
         }

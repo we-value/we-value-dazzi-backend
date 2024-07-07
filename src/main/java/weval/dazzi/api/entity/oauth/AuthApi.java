@@ -6,7 +6,7 @@ import weval.dazzi.api.config.config.security.jwt.JwtTokenProvider;
 import weval.dazzi.api.entity.member.MemberService;
 import weval.dazzi.api.entity.oauth.dto.RequestOauth;
 import weval.dazzi.api.entity.oauth.dto.ResponseOauth;
-import weval.dazzi.domain.member.Member;
+import weval.dazzi.domain.entity.member.Member;
 
 @RestController
 @RequiredArgsConstructor
