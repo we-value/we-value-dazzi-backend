@@ -26,7 +26,7 @@ public class Product extends BaseEntity {
 
     private Long stockQuantity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id")
     private Seller seller;
 

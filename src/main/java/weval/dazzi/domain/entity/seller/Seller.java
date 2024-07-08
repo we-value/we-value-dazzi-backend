@@ -20,7 +20,7 @@ public class Seller extends BaseEntity {
 
     private String name;
 
-    @OneToOne(mappedBy = "seller")
+    @OneToOne(mappedBy = "seller", fetch = FetchType.LAZY)
     private Member member;
 
 //    @OneToMany(mappedBy = "seller")

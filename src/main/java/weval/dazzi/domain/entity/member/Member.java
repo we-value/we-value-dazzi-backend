@@ -37,7 +37,7 @@ public class Member extends BaseEntity {
      * 추 후에 Member를 가지고 Seller를 찾으려면 조회를 한번 더 해야함.
      * 또, LAZY가 어쩌고 저쩌고..
      */
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id")
     private Seller seller;
 

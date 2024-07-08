@@ -22,6 +22,6 @@ public class Payment extends BaseEntity {
     private String amount;
     private String status;
 
-    @OneToOne(mappedBy = "payment")
+    @OneToOne(mappedBy = "payment", fetch = FetchType.LAZY)
     private Order order;
 }
