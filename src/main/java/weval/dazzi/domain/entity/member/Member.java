@@ -51,8 +51,4 @@ public class Member extends BaseEntity {
         this.socialLoginType = socialLoginType;
         this.deviceInfo = deviceInfo;
     }
-
-    public String getSocialIdAndNickname() {
-        return this.socialId + this.nickname;
-    }
 }
