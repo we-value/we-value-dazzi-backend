@@ -1,9 +1,9 @@
 package weval.dazzi.api.entity.member;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import weval.dazzi.api.entity.member.dto.RequestMember;
-import weval.dazzi.domain.entity.member.*;
+import weval.dazzi.api.entity.member.dto.ResponseMember;
 
 @RestController
 @RequestMapping("/member")
@@ -12,8 +12,10 @@ public class MemberApi {
 
     private final MemberService memberService;
 
-    @PostMapping
-    public Member member(@RequestBody RequestMember.Test test) {
-        return memberService.find(test.getId());
+    //제품 등록할때 판매자 있는지 체크
+    //판매자 등록할때 판매자 있는지 체크
+    @GetMapping("/isSeller")
+    public ResponseMember.IsSeller memberIsSeller(HttpServletRequest request) {
+        return memberService.memberIsSeller(request.getHeader("authorizationToken"));
     }
 }

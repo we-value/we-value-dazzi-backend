@@ -27,7 +27,7 @@ public class AuthApi {
 
         Member member = memberService.checkAndSave(userInfo);
 
-        String token = jwtTokenProvider.createToken(member.getSocialId());
+        String token = jwtTokenProvider.createToken(member.getMemberId().toString());
 
         return new ResponseOauth.TokenAndNickname(token, member.getNickname());
     }

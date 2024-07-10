@@ -19,12 +19,12 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
 
-        Member member = memberRepository.findBySocialId(userId)
-                .orElseThrow(() -> new UsernameNotFoundException("Could not found user" + userId));
+        Member member = memberRepository.findByMemberId(Long.valueOf(userId))
+                .orElseThrow(() -> new UsernameNotFoundException("Could not found member" + userId));
 
 
         return User.builder()
-                .username(member.getSocialId())
+                .username(member.getMemberId().toString())
                 .password("")
                 .roles("USER")
                 .build();
