@@ -20,6 +20,9 @@ public class Seller extends BaseEntity {
 
     private String name;
 
+    @Column(length = 500)
+    private String introduction;
+
     @OneToOne(mappedBy = "seller", fetch = FetchType.LAZY)
     private Member member;
 
