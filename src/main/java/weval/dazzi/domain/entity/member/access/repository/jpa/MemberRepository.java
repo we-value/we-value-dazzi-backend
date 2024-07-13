@@ -1,4 +1,4 @@
-package weval.dazzi.domain.entity.member.access.repository;
+package weval.dazzi.domain.entity.member.access.repository.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import weval.dazzi.domain.entity.member.Member;

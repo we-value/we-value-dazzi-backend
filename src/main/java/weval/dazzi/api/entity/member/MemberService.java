@@ -7,7 +7,7 @@ import weval.dazzi.api.config.config.security.jwt.JwtTokenProvider;
 import weval.dazzi.api.entity.oauth.dto.ResponseOauth;
 import weval.dazzi.api.entity.member.dto.ResponseMember;
 import weval.dazzi.domain.entity.member.Member;
-import weval.dazzi.domain.entity.member.access.repository.MemberRepository;
+import weval.dazzi.domain.entity.member.access.repository.jpa.MemberRepository;
 
 import java.util.Optional;
 

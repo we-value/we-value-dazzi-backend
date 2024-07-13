@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import weval.dazzi.domain.entity.member.Member;
-import weval.dazzi.domain.entity.member.access.repository.MemberRepository;
+import weval.dazzi.domain.entity.member.access.repository.jpa.MemberRepository;
 
 @Slf4j
 @Component

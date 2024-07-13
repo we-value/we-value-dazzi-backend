@@ -37,12 +37,17 @@ public class Member extends BaseEntity {
      * 추 후에 Member를 가지고 Seller를 찾으려면 조회를 한번 더 해야함.
      * 또, LAZY가 어쩌고 저쩌고..
      */
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "seller_id")
     private Seller seller;
 
 //    @OneToMany(mappedBy = "member") //seller는 읽기만 가능하다.(주인x), 보통 수정이 이루어지는 쪽이 주인.
 //    private List<Order> order = new ArrayList<>();
+
+    public void memberToMappingSeller(Seller seller) {
+        this.seller = seller;
+        seller.memberToMappingSeller(this);
+    }
 
     @Builder
     public Member(String socialId, String nickname, SocialLoginType socialLoginType, String deviceInfo) {
