@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import weval.dazzi.domain.BaseEntity;
 import weval.dazzi.domain.entity.member.Member;
+import weval.dazzi.domain.entity.product.Product;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static lombok.AccessLevel.PROTECTED;
 
@@ -27,11 +31,18 @@ public class Seller extends BaseEntity {
     @OneToOne(mappedBy = "seller", fetch = FetchType.LAZY)
     private Member member;
 
+    @OneToMany(mappedBy = "seller",cascade = CascadeType.ALL)
+    List<Product> products = new ArrayList<>();
+
     @Builder
     public Seller(String name, String introduction, Member member) {
         this.name = name;
         this.introduction = introduction;
         this.member = member;
+    }
+
+    public void productToMappingSeller(Product product) {
+        this.getProducts().add(product);
     }
 
     public void memberToMappingSeller(Member member) {
@@ -42,7 +53,4 @@ public class Seller extends BaseEntity {
         this.name = name;
         this.introduction = introduction;
     }
-
-    //    @OneToMany(mappedBy = "seller")
-//    List<Product> products = new ArrayList<>();
 }
